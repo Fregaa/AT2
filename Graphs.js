@@ -1042,6 +1042,7 @@ const getGameData = {
   totalVoids: () => { return game.stats.totalVoidMaps.value },
   nullifium: () => { return recycleAllExtraHeirlooms(true) },
   coord: () => { return game.upgrades.Coordination.allowed - game.upgrades.Coordination.done },
+  trmps: () => { return game.resources.trimps.owned },
   overkill: () => {
     if (game.options.menu.overkillColor.enabled == 0) toggleSetting("overkillColor");
     if (game.global.gridArray && game.global.gridArray[0] && game.global.gridArray[0].name == "Liquimp") return 100;
@@ -1192,6 +1193,9 @@ const graphList = [
   }),
   new Graph("coord", false, "Coordinations", {
     graphTitle: "Unbought Coordinations",
+  }),
+  new Graph("trmps", false, "Trimps", {
+    graphTitle: "Trimps Population",
   }),
   new Graph("overkill", false, "Overkill Cells", {
     // Overkill unlock zones (roughly)
