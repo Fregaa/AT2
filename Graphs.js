@@ -1042,7 +1042,6 @@ const getGameData = {
   totalVoids: () => { return game.stats.totalVoidMaps.value },
   nullifium: () => { return recycleAllExtraHeirlooms(true) },
   coord: () => { return game.upgrades.Coordination.allowed - game.upgrades.Coordination.done },
-  trmps: () => { return game.resources.trimps.owned },
   overkill: () => {
     if (game.options.menu.overkillColor.enabled == 0) toggleSetting("overkillColor");
     if (game.global.gridArray && game.global.gridArray[0] && game.global.gridArray[0].name == "Liquimp") return 100;
@@ -1055,6 +1054,7 @@ const getGameData = {
   lastWarp: () => { return game.global.lastWarp },
   essence: () => { return game.global.spentEssence + game.global.essence },
   heliumOwned: () => { return game.resources.helium.owned },
+  trimpsOwned: () => { return game.resources.trimps.owned },
   //magmite: () => { return game.global.magmite },
   //magmamancers: () => { return game.jobs.Magmamancer.owned },
   fluffy: () => {
@@ -1121,6 +1121,10 @@ const graphList = [
   }),
   // U1 Graphs
   new Graph("heliumOwned", 1, "Helium", {
+    toggles: ["perHr", "perZone", "lifetime", "world", "map"]
+  }),
+  new Graph("trimpsOwned", 1, "Trimps", {
+    graphTitle: "Trimps Population",
     toggles: ["perHr", "perZone", "lifetime", "world", "map"]
   }),
   new Graph("fluffy", 1, "Fluffy Exp", {
@@ -1193,9 +1197,6 @@ const graphList = [
   }),
   new Graph("coord", false, "Coordinations Left", {
     graphTitle: "Unbought Coordinations",
-  }),
-  new Graph("trmps", false, "Trimps", {
-    graphTitle: "Trimps Population",
   }),
   new Graph("overkill", false, "Overkill Cells", {
     // Overkill unlock zones (roughly)
