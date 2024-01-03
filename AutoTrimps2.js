@@ -70,7 +70,7 @@ function printChangelog() {
         <br>See <a target="#" href="https://github.com/Zorn192/AutoTrimps/blob/gh-pages/README.md">ReadMe</a> Or check <a target="#" href="https://github.com/Zorn192/AutoTrimps/commits/gh-pages" target="#">the commit history</a> (if you want).',
         action = 'cancelTooltip()',
         title = 'Script Update Notice<br>' + ATversion,
-        acceptBtnText = "Thank you for playing AutoTrimps. Accept and Continue.",
+        acceptBtnText = "Ok! Dale",
         hideCancel = true;
     tooltip('confirm', null, 'update', body + footer, action, title, acceptBtnText, null, hideCancel);
 }
