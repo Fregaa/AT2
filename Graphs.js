@@ -1191,7 +1191,7 @@ const graphList = [
     graphTitle: "Void Map History (voids finished during the same level acquired are not counted/tracked)",
     yTitle: "Number of Void Maps",
   }),
-  new Graph("coord", false, "Coordinations", {
+  new Graph("coord", false, "Coordinations Left", {
     graphTitle: "Unbought Coordinations",
   }),
   new Graph("trmps", false, "Trimps", {
